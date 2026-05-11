@@ -1,0 +1,185 @@
+@font-face {
+    font-family: 'pricedownblack';
+    src: url('gtafont.woff2') format('woff2'), url('gtafont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+
+#content{
+	position: absolute;
+	font-family: 'pricedownblack';
+    font-family: 'pricedownblack';
+	font-size: 23px;
+	color: white;
+	padding: 4px;
+	text-shadow: 4px 4px #000000;
+	text-align: right;
+	top: 140;
+	right: 205;
+}
+.bottomrightcontainer {
+	position: absolute;
+	width: 200px;
+}
+#content > img {
+    width: 40px;
+}
+
+#content span {
+    color: white;
+}
+
+.gangTurfUi {
+	font-family: 'Rubik', sans-serif !important;
+	font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	align-self: flex-end;
+
+    gap: 3px;
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    padding: 7px;
+}
+
+.gangTurfOptions {
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    width: 'fit-content';
+    font-size: 0.9vw;
+    padding: .2vw;
+    padding-left: .4vw;
+    padding-right: .4vw;
+    border-radius: 5px;
+    color: white;
+    text-shadow: .0vw .0vw .5vw black;
+}
+
+
+.TurftopContainer {
+	font-family: 'Rubik', sans-serif !important;
+
+	position: absolute;
+	top: 5px; 
+	width: 11vw;
+	height: 3.8vh;
+	right:45%;
+	background: rgba(0, 0, 0, 0.6);
+box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.66);
+border-radius: 4px;
+}
+
+.TurfNameContainer {
+	font-family: 'Rubik', sans-serif !important;
+	position: relative;
+	top: 6px;
+	width: 5vw;
+	height: 2.5vh;
+	background: #FF0000;
+box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.66);
+border-radius: 3px;
+left: 4%;
+}
+
+.TurfName {
+	position: relative;
+	text-align: center;
+	font-size: 13px !important;
+	bottom: -5px;
+	color: white;
+	font-weight: bolder;
+	
+}
+
+.turfstat {
+display: inline-block;
+overflow: hidden;
+white-space: nowrap;
+padding: 8px;
+	position: relative;
+left: 50%;
+top: -25px;
+font-family: 'Rubik', sans-serif ;
+font-weight: bolder;
+font-size: 14px;
+
+
+color: white;
+
+}
+
+.line {
+	position: absolute;
+	left: 25px;
+	width: 200px;
+height: 8px;
+z-index: 1;
+bottom: 60px;
+background: rgba(0, 0, 0, 0.5);
+border-radius: 39px;
+}
+
+.lineover{
+	
+	position: absolute;
+	left: 25px;
+	min-width: 10%;
+	max-width: 200px;
+height: 8px;
+z-index: 2;
+bottom: 60px;
+background: #FF0000;
+border-radius: 39px;
+}
+
+.namecontainer {
+	position: absolute;
+	left: 35px; 
+	bottom: 25px; 
+	width: 6vw; 
+	height: 2.2vh;
+	
+	background: #ff0000;
+box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.66);
+border-radius: 3px;
+font-size: 15px !important;
+
+color: white;
+display: inline-block;
+font-weight: bolder;
+}
+
+.namo {
+	font-family: 'Rubik', sans-serif !important;
+
+	text-align: center;
+}
+.timecontainer {
+	position: absolute;
+	left: 155px; 
+	bottom: 25px; 
+	width: 2vw; 
+	height: 2.2vh;
+	
+	background: rgba(0, 0, 0, 0.5);
+box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.66);
+border-radius: 3px;
+font-size: 15px !important;
+
+color: white;
+display: inline-block;
+font-weight: bolder;
+}
+.time {
+	font-family: 'Rubik', sans-serif ;
+
+	text-align: center;
+}

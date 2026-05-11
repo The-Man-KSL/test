@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>es-scoreboardv2</title>
+    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/line-awesome/dist/line-awesome/css/line-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+</head>
+
+
+<div id="app" v-if="ui" >
+
+    <div class="jobserver">
+        <div class="list">
+            <div class="value">{{job.ambulance}}</div>
+            <div class="online">ONLINE</div>
+            <svg width="12.4375rem" height="4.375rem" viewBox="0 0 199 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="6.5" y="1.5" width="192" height="65" rx="5.5" fill="#7090E2" fill-opacity="0.06" stroke="url(#paint0_radial_205_273)"/>
+                <g filter="url(#filter0_d_205_273)">
+                <path d="M44.2512 44.2512C44.2512 43.6094 44.4783 43.0614 44.9324 42.6073C45.3866 42.1532 45.9345 41.9261 46.5764 41.9261C47.2182 41.9261 47.7662 42.1532 48.2203 42.6073C48.6744 43.0614 48.9015 43.6094 48.9015 44.2512C48.9015 44.8931 48.6744 45.441 48.2203 45.8952C47.7662 46.3493 47.2182 46.5764 46.5764 46.5764C45.9345 46.5764 45.3866 46.3493 44.9324 45.8952C44.4783 45.441 44.2512 44.8931 44.2512 44.2512ZM51.2266 34.9507H44.2512V30.3005H47.1213C47.2909 30.3247 47.4241 30.3792 47.5209 30.464L51.0631 34.0062C51.1479 34.1515 51.2024 34.2847 51.2266 34.4058V34.9507ZM27.9754 44.2512C27.9754 43.6094 28.2024 43.0614 28.6566 42.6073C29.1107 42.1532 29.6587 41.9261 30.3005 41.9261C30.9423 41.9261 31.4903 42.1532 31.9444 42.6073C32.3986 43.0614 32.6256 43.6094 32.6256 44.2512C32.6256 44.8931 32.3986 45.441 31.9444 45.8952C31.4903 46.3493 30.9423 46.5764 30.3005 46.5764C29.6587 46.5764 29.1107 46.3493 28.6566 45.8952C28.2024 45.441 27.9754 44.8931 27.9754 44.2512ZM25.6502 32.0443V28.5567C25.6502 28.3871 25.7047 28.2478 25.8137 28.1389C25.9227 28.0299 26.062 27.9754 26.2315 27.9754H30.3005V23.9064C30.3005 23.7369 30.355 23.5976 30.464 23.4886C30.573 23.3796 30.7122 23.3251 30.8818 23.3251H34.3695C34.539 23.3251 34.6783 23.3796 34.7873 23.4886C34.8962 23.5976 34.9507 23.7369 34.9507 23.9064V27.9754H39.0197C39.1892 27.9754 39.3285 28.0299 39.4375 28.1389C39.5465 28.2478 39.601 28.3871 39.601 28.5567V32.0443C39.601 32.2139 39.5465 32.3531 39.4375 32.4621C39.3285 32.5711 39.1892 32.6256 39.0197 32.6256H34.9507V36.6946C34.9507 36.8641 34.8962 37.0034 34.7873 37.1124C34.6783 37.2214 34.539 37.2759 34.3695 37.2759H30.8818C30.7122 37.2759 30.573 37.2214 30.464 37.1124C30.355 37.0034 30.3005 36.8641 30.3005 36.6946V32.6256H26.2315C26.062 32.6256 25.9227 32.5711 25.8137 32.4621C25.7047 32.3531 25.6502 32.2139 25.6502 32.0443ZM21 22.1626V43.0887C21 43.4035 21.115 43.676 21.3451 43.9061C21.5752 44.1362 21.8477 44.2512 22.1626 44.2512H25.6502C25.6502 45.5349 26.1044 46.6309 27.0126 47.5391C27.9209 48.4474 29.0168 48.9015 30.3005 48.9015C31.5842 48.9015 32.6801 48.4474 33.5884 47.5391C34.4966 46.6309 34.9507 45.5349 34.9507 44.2512H41.9261C41.9261 45.5349 42.3802 46.6309 43.2885 47.5391C44.1967 48.4474 45.2927 48.9015 46.5764 48.9015C47.86 48.9015 48.956 48.4474 49.8642 47.5391C50.7725 46.6309 51.2266 45.5349 51.2266 44.2512H53.5517C53.8666 44.2512 54.1391 44.1362 54.3692 43.9061C54.5992 43.676 54.7143 43.4035 54.7143 43.0887C54.7143 42.7738 54.5992 42.5013 54.3692 42.2712C54.1391 42.0412 53.8666 41.9261 53.5517 41.9261V34.3695C53.5517 34.0546 53.473 33.7034 53.3156 33.3159C53.1582 32.9284 52.9644 32.6196 52.7343 32.3895L49.1376 28.7928C48.9075 28.5627 48.5987 28.3689 48.2112 28.2115C47.8237 28.0541 47.4725 27.9754 47.1576 27.9754H44.2512V22.1626C44.2512 21.8477 44.1362 21.5752 43.9061 21.3451C43.676 21.115 43.4035 21 43.0887 21H22.1626C21.8477 21 21.5752 21.115 21.3451 21.3451C21.115 21.5752 21 21.8477 21 22.1626Z" fill="url(#paint1_radial_205_273)"/>
+                </g>
+                <rect x="125" y="26" width="48" height="17" rx="2.28571" fill="#7E82E2"/>
+                <defs>
+                <filter id="filter0_d_205_273" x="0" y="0" width="75.7143" height="69.9015" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="10.5"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.439216 0 0 0 0 0.564706 0 0 0 0 0.886275 0 0 0 0.31 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_205_273"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_205_273" result="shape"/>
+                </filter>
+                <radialGradient id="paint0_radial_205_273" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(163.909 5) rotate(140.898) scale(145.077 198.632)">
+                <stop stop-color="#7090E2"/>
+                <stop offset="1" stop-color="#8E70E2"/>
+                </radialGradient>
+                <radialGradient id="paint1_radial_205_273" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(37.7143 21) rotate(97.7652) scale(33.3054 40.244)">
+                <stop stop-color="#8876E2"/>
+                <stop offset="1" stop-color="#7090E2"/>
+                </radialGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="list">
+            <div class="value" style="color:#AE6FE0">{{job.all}}</div>
+            <div class="online" style="left:8.1rem">ONLINE</div>
+            <svg width="12.25rem" height="4.25rem" viewBox="0 0 196 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3.5" y="1.5" width="192" height="65" rx="5.5" fill="#7090E2" fill-opacity="0.06" stroke="url(#paint0_radial_321_273)"/>
+                <g filter="url(#filter0_d_321_273)">
+                <path d="M30.1487 21C26.7439 21 23.9759 23.768 23.9759 27.1728C23.9759 30.5126 26.588 33.2156 29.9928 33.3325C30.0967 33.3195 30.2007 33.3195 30.2786 33.3325H30.3696C31.9672 33.2792 33.4814 32.6067 34.5922 31.4572C35.7029 30.3077 36.323 28.7712 36.3215 27.1728C36.3215 23.768 33.5535 21 30.1487 21ZM36.7503 36.788C33.1246 34.3709 27.2118 34.3709 23.5601 36.788C21.9097 37.8926 21 39.3871 21 40.9855C21 42.5839 21.9097 44.0654 23.5471 45.157C25.3664 46.3785 27.7576 46.9893 30.1487 46.9893C32.5398 46.9893 34.931 46.3785 36.7503 45.157C38.3877 44.0524 39.2974 42.5709 39.2974 40.9595C39.2844 39.3611 38.3877 37.8796 36.7503 36.788ZM44.4305 27.9369C44.6385 30.458 42.8451 32.6672 40.363 32.9661H40.298C40.2201 32.9661 40.1421 32.9661 40.0771 32.9921C38.8166 33.057 37.66 32.6542 36.7893 31.9135C38.1278 30.7179 38.8945 28.9245 38.7386 26.9752C38.6494 25.9616 38.3052 24.987 37.738 24.1423C38.4189 23.811 39.1702 23.6503 39.9271 23.6742C40.6839 23.6981 41.4236 23.9057 42.0824 24.2792C42.7411 24.6527 43.2991 25.1808 43.7082 25.818C44.1173 26.4553 44.3652 27.1825 44.4305 27.9369Z" fill="#AE6FE0"/>
+                <path d="M47.027 39.9602C46.923 41.2207 46.1173 42.3123 44.7658 43.053C43.4663 43.7678 41.8289 44.1057 40.2045 44.0667C41.1401 43.222 41.6859 42.1694 41.7899 41.0518C41.9198 39.4403 41.1531 37.8939 39.6197 36.6593C38.749 35.9706 37.7354 35.4248 36.6308 35.0219C39.5027 34.1902 43.1154 34.749 45.3376 36.5424C46.5332 37.504 47.144 38.7126 47.027 39.9602Z" fill="#AE6FE0"/>
+                </g>
+                <rect x="122" y="26" width="48" height="17" rx="2.28571" fill="#AE6FE0"/>
+                <defs>
+                <filter id="filter0_d_321_273" x="0" y="0" width="68.0411" height="67.9893" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="10.5"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.682353 0 0 0 0 0.435294 0 0 0 0 0.878431 0 0 0 0.31 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_321_273"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_321_273" result="shape"/>
+                </filter>
+                <radialGradient id="paint0_radial_321_273" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(160.909 5) rotate(140.898) scale(145.077 198.632)">
+                <stop stop-color="#AE6FE0"/>
+                <stop offset="1" stop-color="#AE6FE0"/>
+                </radialGradient>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <div class="heist">
+
+        <div class="center" v-for="eyes in heist">
+
+            <div class="border">
+                <p>
+                    {{ eyes.label }}
+                </p>
+                <svg width="26.3125rem" height="9.75rem" viewBox="0 0 421 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#clip0_205_27)">
+                    <g filter="url(#filter0_d_205_27)">
+                    <rect y="116" width="252" height="40" rx="4" fill="#404040"/>
+                    </g>
+                    </g>
+                    <rect x="1" y="1" width="419" height="154" rx="7.89265" stroke="#404040" stroke-width="2"/>
+                    <defs>
+                    <filter id="filter0_d_205_27" x="-74" y="42" width="400" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset/>
+                    <feGaussianBlur stdDeviation="37"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0.25098 0 0 0 0 0.25098 0 0 0 0 0.25098 0 0 0 0.42 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_205_27"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_205_27" result="shape"/>
+                    </filter>
+                    <clipPath id="clip0_205_27">
+                    <rect width="421" height="156" rx="8.89265" fill="white"/>
+                    </clipPath>
+                    </defs>
+                </svg>
+                <div class="icon">
+                    <h1>
+                        {{ eyes.header }}
+                    </h1>
+                    <p>
+                        {{ eyes.description }}
+                    </p>
+                </div>
+                <div class="clock">
+                    <span style="background: linear-gradient(90deg, #3A3A3A 0%, rgb(99, 99, 99) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+                    color: gray;
+                    position: absolute;
+                    left: 0.5rem;
+                    top: 1rem;">02.54 P.M</span> 23.06.2023
+                </div>
+            </div>
+
+            
+        </div>
+        
+        
+          
+    </div>
+
+    
+
+    <div class="player">
+        <div class="list" v-for="data in players" :key="data">
+            <svg width="44.0625rem" height="3.6875rem" viewBox="0 0 705 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.308781" y="1.23578" width="704.125" height="57.1846" rx="8.58387" stroke="white" stroke-opacity="0.15" stroke-width="0.617561"/>
+            </svg>        
+            <div class="avatar" :style="{ backgroundImage: `url(${data.avatar})` }"></div>        
+            <div class="name">{{ capitalizeFirstLetter(data.name) }}</div>
+            <div class="role">
+                <!-- <p>{{data.group}}</p> -->
+                <p v-if="data.group">Admin</p>
+                <p v-else>User</p>                
+                <svg width=".875rem" height=".75rem" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.8245 2.52789H9.32397V1.27937C9.32397 0.586445 8.76761 0.0308533 8.07372 0.0308533H5.57324C4.87935 0.0308533 4.32299 0.586445 4.32299 1.27937V2.52789H1.82251C1.12862 2.52789 0.578517 3.08349 0.578517 3.77642L0.572266 10.6433C0.572266 11.3362 1.12862 11.8918 1.82251 11.8918H11.8245C12.5183 11.8918 13.0747 11.3362 13.0747 10.6433V3.77642C13.0747 3.08349 12.5183 2.52789 11.8245 2.52789ZM8.07372 2.52789H5.57324V1.27937H8.07372V2.52789Z" fill="#46C8FF"/>
+                </svg>
+            </div>
+
+            <div class="job">
+                <p>{{ capitalizeFirstLetter(data.job) }}</p>
+                <svg width=".8125rem" height=".75rem" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.5422 2.52789H9.04174V1.27937C9.04174 0.586445 8.48538 0.0308533 7.7915 0.0308533H5.29101C4.59713 0.0308533 4.04077 0.586445 4.04077 1.27937V2.52789H1.54028C0.846397 2.52789 0.29629 3.08349 0.29629 3.77642L0.290039 10.6433C0.290039 11.3362 0.846397 11.8918 1.54028 11.8918H11.5422C12.2361 11.8918 12.7925 11.3362 12.7925 10.6433V3.77642C12.7925 3.08349 12.2361 2.52789 11.5422 2.52789ZM7.7915 2.52789H5.29101V1.27937H7.7915V2.52789Z" fill="#FF4667"/>
+                </svg>                    
+            </div>
+
+            <div class="id">
+                <p :style="{ color: idColors[data.id] }">{{ data.id }}</p>
+                <svg width="2.25rem" height="2.1875rem" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.908691" y="0.386246" width="34.4061" height="34.4061" rx="1.37624" fill="#FF4667" fill-opacity="0.14"/>
+                </svg>
+            </div>
+
+            <div class="duty" v-if="data.onDuty">
+                <p>                    
+                    Duty On
+                </p>
+            </div>
+
+            <div class="ping" :style="{ left: data.onDuty ? '35rem' : '33.5rem' }">
+                <p>                    
+                    PING {{ data.ping }}
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>
+            SCOREBOARD
+        </h1>
+        <p>
+            CRM RP
+        </p>
+    </div>
+
+    <div class="up">
+        <div class="list" v-for="(item, index) in update" :key="index">
+            <h1 :style="computedStyles[index]">
+                {{ item.header }}
+            </h1>
+            <p>
+                {{ item.description }}
+            </p>
+            <svg width="5.375rem" height="5.4375rem" viewBox="0 0 86 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_321_327)">
+                <rect x="28" y="26" width="30.1565" height="30.1565" rx="3.61877" :fill="computedColors[index]"/>
+                </g>
+                <path d="M40.2911 35.668C39.8852 35.668 39.5663 35.3395 39.5663 34.9433V32.247C39.5663 32.0548 39.6427 31.8704 39.7786 31.7345C39.9145 31.5986 40.0989 31.5222 40.2911 31.5222C40.4833 31.5222 40.6677 31.5986 40.8036 31.7345C40.9395 31.8704 41.0159 32.0548 41.0159 32.247V34.9336C41.0159 35.3395 40.697 35.668 40.2911 35.668ZM47.4618 35.668C47.0559 35.668 46.737 35.3395 46.737 34.9433V32.247C46.737 32.0548 46.8133 31.8704 46.9492 31.7345C47.0852 31.5986 47.2695 31.5222 47.4618 31.5222C47.654 31.5222 47.8383 31.5986 47.9743 31.7345C48.1102 31.8704 48.1865 32.0548 48.1865 32.247V34.9336C48.1865 35.3395 47.8676 35.668 47.4618 35.668ZM53.0572 44.8778C53.0572 45.0227 53.0089 45.1677 52.8832 45.2933L47.5584 50.6568C47.4328 50.7921 47.2685 50.8501 47.1042 50.8501C46.7853 50.8501 46.476 50.5988 46.476 50.2316V46.8492C46.476 45.4383 47.6744 44.269 49.1433 44.269C50.0614 44.2593 51.337 44.2593 52.429 44.2593C52.8059 44.2593 53.0572 44.5589 53.0572 44.8778Z" fill="white"/>
+                <path d="M53.0572 44.8778C53.0572 45.0227 53.0089 45.1677 52.8832 45.2933L47.5584 50.6568C47.4328 50.7921 47.2685 50.8501 47.1042 50.8501C46.7853 50.8501 46.476 50.5988 46.476 50.2316V46.8492C46.476 45.4383 47.6744 44.269 49.1433 44.269C50.0614 44.2593 51.337 44.2593 52.429 44.2593C52.8059 44.2593 53.0572 44.5589 53.0572 44.8778Z" fill="white"/>
+                <path d="M51.192 33.9382C50.5542 33.4647 49.6361 33.9189 49.6361 34.721V34.8176C49.6361 35.9483 48.8244 36.992 47.6937 37.108C46.3891 37.2433 45.2874 36.2189 45.2874 34.9433V33.9382C45.2874 33.4067 44.8525 32.9718 44.321 32.9718H43.4319C42.9004 32.9718 42.4655 33.4067 42.4655 33.9382V34.8176C42.4655 35.668 42.0113 36.4605 41.3058 36.8471C41.2672 36.876 41.2285 36.8954 41.1898 36.9147C41.1802 36.9147 41.1802 36.9244 41.1705 36.9244C41.1029 36.9534 41.0352 36.9823 40.9579 37.0113C40.9386 37.021 40.9193 37.021 40.8999 37.0307C40.784 37.0693 40.6583 37.0983 40.523 37.108H40.5134C40.3684 37.1273 40.2138 37.1273 40.0688 37.108H40.0592C39.9239 37.0983 39.7982 37.0693 39.6823 37.0307C39.5856 37.0017 39.489 36.963 39.3924 36.9147C39.0119 36.7445 38.689 36.4678 38.4626 36.1179C38.2362 35.768 38.1161 35.36 38.1167 34.9433V34.721C38.1167 33.9769 37.3243 33.5323 36.6961 33.8512C36.6865 33.8609 36.6768 33.8609 36.6671 33.8706H36.6575C36.5898 33.9189 36.5318 33.9672 36.4642 34.0155C36.2837 34.1591 36.1157 34.3175 35.9617 34.489C35.8843 34.5664 35.8167 34.6437 35.749 34.7306C35.7007 34.7886 35.6427 34.8466 35.6041 34.9143C35.5558 34.9722 35.5171 35.0399 35.4785 35.0979C35.3803 35.2392 35.2931 35.3878 35.2175 35.5424C35.1982 35.5617 35.1885 35.5714 35.1885 35.5907C35.1306 35.7067 35.0726 35.8227 35.0339 35.9483C35.0049 35.9966 34.9953 36.0353 34.9759 36.0836C34.9566 36.1223 34.9469 36.1706 34.9276 36.2092C34.8986 36.3059 34.8696 36.4122 34.8406 36.5185C34.802 36.6538 34.773 36.7987 34.7537 36.9437C34.7185 37.187 34.6992 37.4323 34.6957 37.6781V46.1438C34.6957 46.7618 34.8174 47.3738 35.0539 47.9448C35.2904 48.5158 35.6371 49.0346 36.0741 49.4717C36.9567 50.3543 38.1538 50.8501 39.402 50.8501H44.06C44.5916 50.8501 45.0264 50.4152 45.0264 49.8837V46.8492C45.0264 44.6265 46.8723 42.8194 49.1433 42.8194C49.6555 42.8097 50.9021 42.8097 52.0908 42.8097C52.6223 42.8097 53.0572 42.3748 53.0572 41.8433V37.6781C53.0572 36.1416 52.3227 34.7983 51.192 33.9382ZM43.0357 44.9648C42.9487 45.2547 42.6781 45.4576 42.3592 45.4576H38.8415C38.7932 45.4576 38.7545 45.4576 38.7159 45.4383C38.5473 45.4137 38.3935 45.3284 38.2832 45.1986C38.1729 45.0687 38.1137 44.9032 38.1167 44.7328C38.1167 44.3269 38.4356 43.9984 38.8415 43.9984H42.3592C42.7554 43.9984 43.084 44.3269 43.084 44.7328C43.084 44.8101 43.0743 44.8971 43.0357 44.9648ZM45.7222 41.3794C45.6353 41.6694 45.3647 41.8723 45.0458 41.8723H38.8415C38.7932 41.8723 38.7545 41.8723 38.7159 41.853C38.5473 41.8283 38.3935 41.7431 38.2832 41.6133C38.1729 41.4834 38.1137 41.3178 38.1167 41.1475C38.1167 40.7416 38.4356 40.413 38.8415 40.413H45.0458C45.4516 40.413 45.7706 40.7416 45.7706 41.1475C45.7706 41.2248 45.7609 41.3118 45.7222 41.3794Z" fill="white"/>
+                <defs>
+                <filter id="filter0_d_321_327" x="0.256063" y="0.66858" width="85.6444" height="85.6444" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dy="2.41252"/>
+                <feGaussianBlur stdDeviation="13.872"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.27451 0 0 0 0 0.403922 0 0 0 0.15 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_321_327"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_321_327" result="shape"/>
+                </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+    <div class="update-bg"></div>
+    
+    <div class="profile">
+        <div class="name">
+            {{profile.name}} {{profile.lastname}}<br>
+            <span style="position:absolute; font-size:0.9rem; top:1.8rem; left:0.15rem; opacity:0.5; font-family:Satoshi-2; text-transform: uppercase;">{{ formattedDate }}</span>
+        </div>
+        <svg width="22.375rem" height="21.75rem" viewBox="0 0 358 348" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <rect width="358" height="347.052" rx="6.56881" fill="#BBBBBB" fill-opacity="0.02"/>
+        <rect x="0.547401" y="0.547401" width="356.905" height="345.957" rx="6.02141" stroke="white" stroke-opacity="0.08" stroke-width="1.0948"/>
+        <path d="M1.09479 6.56885C1.09479 3.54564 3.54558 1.09485 6.56879 1.09485H351.431C354.454 1.09485 356.905 3.54564 356.905 6.56885V78.8257H1.09479V6.56885Z" fill="url(#pattern0)" fill-opacity="0.8"/>
+        <rect x="21" y="26" width="78.9483" height="78.9483" rx="39.4742" fill="url(#pattern1)"/>
+        </svg>
+        <div class="clock">
+            <div class="label"> {{time.hours}}h {{time.minutes}}m {{time.seconds}}s</div>
+            <svg width="10.5625rem" height="2.4375rem" viewBox="0 0 169 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.452637" y="4.9021" width="124.807" height="29.5596" rx="2.1896" fill="#D9D9D9" fill-opacity="0.06"/>
+                <rect x="4.83179" y="11.4709" width="17.5168" height="17.5168" rx="2.1896" fill="#D9D9D9" fill-opacity="0.05"/>
+                <path d="M13.5902 14.7554C10.574 14.7554 8.11621 17.2132 8.11621 20.2294C8.11621 23.2456 10.574 25.7034 13.5902 25.7034C16.6064 25.7034 19.0642 23.2456 19.0642 20.2294C19.0642 17.2132 16.6064 14.7554 13.5902 14.7554ZM15.9714 22.1836C15.944 22.2302 15.9076 22.271 15.8643 22.3034C15.821 22.3359 15.7717 22.3594 15.7193 22.3727C15.6668 22.3859 15.6122 22.3886 15.5587 22.3806C15.5052 22.3726 15.4539 22.354 15.4076 22.3259L13.7106 21.3132C13.2891 21.0614 12.9771 20.5086 12.9771 20.0214V17.777C12.9771 17.5526 13.1632 17.3665 13.3877 17.3665C13.6121 17.3665 13.7982 17.5526 13.7982 17.777V20.0214C13.7982 20.2184 13.9624 20.5086 14.1321 20.6071L15.8291 21.6198C16.0261 21.7347 16.0918 21.9865 15.9714 22.1836Z" fill="#727272"/>
+                <g filter="url(#filter0_d_335_58)">
+                <path d="M157.038 12.3239L152.207 10.5144C151.707 10.33 150.89 10.33 150.389 10.5144L145.558 12.3239C144.627 12.6752 143.872 13.7644 143.872 14.7569V21.8716C143.872 22.583 144.337 23.5229 144.908 23.9445L149.739 27.5545C150.591 28.1957 151.988 28.1957 152.84 27.5545L157.671 23.9445C158.241 23.5141 158.707 22.583 158.707 21.8716V14.7569C158.716 13.7644 157.96 12.6752 157.038 12.3239ZM154.35 17.2426L150.573 21.0196C150.442 21.1513 150.275 21.2128 150.108 21.2128C149.941 21.2128 149.774 21.1513 149.642 21.0196L148.237 19.5966C148.114 19.4727 148.046 19.3054 148.046 19.1311C148.046 18.9568 148.114 18.7895 148.237 18.6656C148.492 18.4109 148.913 18.4109 149.168 18.6656L150.117 19.6142L153.428 16.3028C153.683 16.0481 154.104 16.0481 154.359 16.3028C154.614 16.5575 154.614 16.9879 154.35 17.2426Z" fill="url(#paint0_radial_335_58)"/>
+                </g>
+                <defs>
+                <filter id="filter0_d_335_58" x="133.857" y="0.361747" width="34.8642" height="37.688" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="5.00718"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.458824 0 0 0 0 0.92549 0 0 0 0 0.478431 0 0 0 0.31 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_335_58"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_335_58" result="shape"/>
+                </filter>
+                <radialGradient id="paint0_radial_335_58" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(147.501 14.8889) rotate(64.6121) scale(15.5716 13.0816)">
+                <stop stop-color="#75EC7A"/>
+                <stop offset="1" stop-color="#6DDBAF"/>
+                </radialGradient>
+                </defs>
+            </svg>
+        </div>
+        <div class="background" :style="{ 'background-image': `url('${profile.background}')` }">
+            <div class="avatar" :style="{ 'background-image': `url('${profile.avatar}')` }"></div>
+        </div>
+        <div class="job">
+            <p>Job</p>
+            <div class="label">{{profile.job}}</div>
+            <svg width="9.25rem" height="4.0625rem" viewBox="0 0 148 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="15.324" y="15.4524" width="130.948" height="34.9728" rx="1.52265" fill="white" fill-opacity="0.02"/>
+                <rect x="14.5626" y="14.6911" width="132.471" height="36.4955" rx="2.28398" stroke="#222223" stroke-opacity="0.47" stroke-width="1.52265"/>
+                <g filter="url(#filter0_d_321_292)">
+                <path d="M38.292 28.8279H35.5566V27.462C35.5566 26.704 34.9479 26.0962 34.1889 26.0962H31.4534C30.6943 26.0962 30.0857 26.704 30.0857 27.462V28.8279H27.3503C26.5912 28.8279 25.9894 29.4357 25.9894 30.1937L25.9825 37.7058C25.9825 38.4638 26.5912 39.0716 27.3503 39.0716H38.292C39.0511 39.0716 39.6597 38.4638 39.6597 37.7058V30.1937C39.6597 29.4357 39.0511 28.8279 38.292 28.8279ZM34.1889 28.8279H31.4534V27.462H34.1889V28.8279Z" fill="#FF5353"/>
+                </g>
+                <rect x="13.8013" y="21.9602" width="2.1896" height="24.0856" rx="1.0948" fill="#FF5353"/>
+                <defs>
+                <filter id="filter0_d_321_292" x="0.879934" y="0.993582" width="63.8825" height="63.1807" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="12.5513"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0.32549 0 0 0 0 0.32549 0 0 0 0.5 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_321_292"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_321_292" result="shape"/>
+                </filter>
+                </defs>
+            </svg>                
+        </div>
+        
+
+        <div class="bank">
+            <p>Bank</p>
+            <div class="label">{{profile.bank}}</div>
+            <svg width="9rem" height="4.0625rem" viewBox="0 0 144 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="11.2505" y="14.4524" width="130.948" height="34.9727" rx="1.52055" fill="white" fill-opacity="0.02"/>
+                <rect x="10.4902" y="13.6921" width="132.469" height="36.4933" rx="2.28083" stroke="#222223" stroke-opacity="0.47" stroke-width="1.52055"/>
+                <g filter="url(#filter0_d_321_286)">
+                <path d="M33.302 34.3421C33.302 32.1057 31.492 31.6002 30.1575 31.0335V28.9656C30.6023 29.1187 30.9091 29.4251 31.1085 29.9612L33.1793 28.7511C32.581 27.4032 31.4766 26.6985 30.1575 26.53V25.1667H29.0838V26.4994C27.4578 26.6526 25.9546 27.6789 25.9546 29.6702C25.9546 31.7228 27.5499 32.4734 28.8843 33.0095C28.9457 33.0401 29.0224 33.0554 29.0838 33.0861V35.1999C28.3935 35.0774 27.9487 34.6485 27.6265 33.9132L25.5098 35.1387C26.062 36.6092 27.3504 37.4976 29.0838 37.6202V38.9528H30.1575V37.6048C31.9828 37.3904 33.302 36.2569 33.302 34.3421ZM28.4088 29.6855C28.4088 29.3179 28.6389 29.0268 29.0838 28.9196V30.528C28.5469 30.2216 28.4088 29.9765 28.4088 29.6855ZM30.1575 35.1693V33.5303C30.6177 33.7601 30.8477 33.9898 30.8477 34.3728C30.8477 34.6944 30.679 35.0314 30.1575 35.1693Z" fill="#53FF98"/>
+                </g>
+                <rect x="9.72791" y="19.8655" width="2.1896" height="24.0856" rx="1.0948" fill="#53FF98"/>
+                <defs>
+                <filter id="filter0_d_321_286" x="0.407156" y="0.0641384" width="57.9975" height="63.9912" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="12.5513"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.32549 0 0 0 0 1 0 0 0 0 0.596078 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_321_286"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_321_286" result="shape"/>
+                </filter>
+                </defs>
+            </svg>                
+        </div>
+
+        <div class="grade">
+            <p>Grade</p>
+            <div class="label">{{profile.grade}}</div>
+            <svg width="9.25rem" height="4rem" viewBox="0 0 148 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15.324" y="15.1405" width="130.948" height="34.9728" rx="1.52265" fill="white" fill-opacity="0.02"/>
+            <rect x="14.5626" y="14.3792" width="132.471" height="36.4955" rx="2.28398" stroke="#222223" stroke-opacity="0.47" stroke-width="1.52265"/>
+            <rect x="13.8013" y="20.5535" width="2.1896" height="24.0856" rx="1.0948" fill="#0085FF"/>
+            <g filter="url(#filter0_d_321_298)">
+            <path d="M38.292 28.516H35.5566V27.1501C35.5566 26.3921 34.9479 25.7843 34.1889 25.7843H31.4534C30.6943 25.7843 30.0857 26.3921 30.0857 27.1501V28.516H27.3503C26.5912 28.516 25.9894 29.1238 25.9894 29.8818L25.9825 37.3939C25.9825 38.1519 26.5912 38.7597 27.3503 38.7597H38.292C39.0511 38.7597 39.6597 38.1519 39.6597 37.3939V29.8818C39.6597 29.1238 39.0511 28.516 38.292 28.516ZM34.1889 28.516H31.4534V27.1501H34.1889V28.516Z" fill="#0085FF"/>
+            </g>
+            <defs>
+            <filter id="filter0_d_321_298" x="0.879934" y="0.681692" width="63.8825" height="63.1807" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset/>
+            <feGaussianBlur stdDeviation="12.5513"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0.521569 0 0 0 0 1 0 0 0 0.5 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_321_298"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_321_298" result="shape"/>
+            </filter>
+            </defs>
+            </svg>
+        </div>
+
+        
+        <div class="cash">
+            <p>Cash</p>
+            <div class="label">{{profile.cash}}</div>
+            <svg width="9.125rem" height="4.0625rem" viewBox="0 0 146 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="13.2506" y="14.1405" width="130.948" height="34.9728" rx="1.52265" fill="white" fill-opacity="0.02"/>
+                <rect x="12.4893" y="13.3792" width="132.471" height="36.4955" rx="2.28398" stroke="#222223" stroke-opacity="0.47" stroke-width="1.52265"/>
+                <g filter="url(#filter0_d_321_304)">
+                <path d="M33.302 34.342C33.302 32.1056 31.492 31.6001 30.1575 31.0334V28.9654C30.6023 29.1186 30.9091 29.425 31.1085 29.9611L33.1793 28.751C32.581 27.403 31.4766 26.6984 30.1575 26.5299V25.1666H29.0838V26.4993C27.4578 26.6525 25.9546 27.6788 25.9546 29.6701C25.9546 31.7227 27.5499 32.4732 28.8843 33.0094C28.9457 33.04 29.0224 33.0553 29.0838 33.0859V35.1998C28.3935 35.0773 27.9487 34.6484 27.6265 33.9131L25.5098 35.1385C26.062 36.6091 27.3504 37.4975 29.0838 37.62V38.9527H30.1575V37.6047C31.9828 37.3903 33.302 36.2567 33.302 34.342ZM28.4088 29.6854C28.4088 29.3178 28.6389 29.0267 29.0838 28.9195V30.5279C28.5469 30.2215 28.4088 29.9764 28.4088 29.6854ZM30.1575 35.1692V33.5302C30.6177 33.7599 30.8477 33.9897 30.8477 34.3726C30.8477 34.6943 30.679 35.0313 30.1575 35.1692Z" fill="#C8FF53"/>
+                </g>
+                <rect x="11.7279" y="19.5535" width="2.1896" height="24.0856" rx="1.0948" fill="#C8FF53"/>
+                <defs>
+                <filter id="filter0_d_321_304" x="0.407156" y="0.0640163" width="57.9975" height="63.9912" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset/>
+                <feGaussianBlur stdDeviation="12.5513"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.32549 0 0 0 0 1 0 0 0 0 0.596078 0 0 0 1 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_321_304"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_321_304" result="shape"/>
+                </filter>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
+
+
+</div>
+
+<script src="./assets/data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="./vue.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</body>
+
+</html>

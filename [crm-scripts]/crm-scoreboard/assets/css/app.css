@@ -1,0 +1,771 @@
+body {
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url(/assets/font/Satoshi-Black.otf);
+}
+@font-face {
+  font-family: Satoshi-2;
+  src: url(/assets/font/Satoshi-Light.otf);
+}
+@font-face {
+  font-family: Satoshi-3;
+  src: url(/assets/font/Satoshi-Bold.otf);
+}
+#app {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("../img/background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.jobserver {
+  position: absolute;
+  overflow: auto;
+  left: 32rem;
+  top: 10.5rem;
+  width: 60rem;
+  height: 5rem;
+  z-index: 1;
+  justify-content: center;
+  display: flex;
+}
+.jobserver .list {
+  position: relative;
+  display: inline-block;
+  margin-left: 9rem;
+  width: 5rem;
+  height: 5rem;
+}
+.jobserver .list .value {
+  position: absolute;
+  width: 2.0625rem;
+  height: 2.25rem;
+  left: 4.3rem;
+  top: 1rem;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6619rem;
+  line-height: 2.25rem;
+  text-align: center;
+  color: #7E82E2;
+}
+.jobserver .list .online {
+  position: absolute;
+  width: 2.125rem;
+  height: 0.6875rem;
+  left: 8.22rem;
+  top: 1.8rem;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.5216rem;
+  line-height: 0.6875rem;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #131819;
+}
+
+.player {
+  position: absolute;
+  overflow: auto;
+  width: 100rem;
+  height: 29rem;
+  top: 16.9rem;
+  left: 25.6rem;
+}
+.player .list {
+  position: relative;
+  float: left;
+  margin-left: 1rem;
+  margin-top: 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.player .list .avatar {
+  position: absolute;
+  width: 2.4481rem;
+  height: 2.4481rem;
+  left: 0.695rem;
+  top: 0.6019rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.255rem;
+}
+.player .list .name {
+  position: absolute;
+  width: 5.0625rem;
+  height: 1rem;
+  left: 4.2rem;
+  top: 1.25rem;
+  font-family: "Satoshi-3";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8695rem;
+  line-height: 1.1875rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.player .list .role {
+  position: absolute;
+  width: 1.5rem;
+  height: 1rem;
+  left: 13rem;
+  top: 1.5rem;
+  font-family: "Satoshi-2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.7537rem;
+  line-height: 1rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.28);
+  align-items: center;
+  justify-content: center;
+}
+.player .list .role > p {
+  position: absolute;
+  width: 3rem;
+  height: 1.1875rem;
+  left: 1.7rem;
+  top: -1.1rem;
+  font-family: "Satoshi-3";
+  text-align: left;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8653rem;
+  line-height: 1.1875rem;
+  color: #46C8FF;
+}
+.player .list .job {
+  position: absolute;
+  width: 1.5rem;
+  height: 1rem;
+  left: 22rem;
+  top: 1.5rem;
+  font-family: "Satoshi-2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.7537rem;
+  line-height: 1rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.28);
+  align-items: center;
+  justify-content: center;
+}
+.player .list .job > p {
+  position: absolute;
+  width: 3rem;
+  height: 1.1875rem;
+  left: 1.7rem;
+  top: -1.1rem;
+  font-family: "Satoshi-3";
+  text-align: left;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8653rem;
+  line-height: 1.1875rem;
+  color: #FF4667;
+}
+.player .list .id {
+  position: absolute;
+  width: 1.5rem;
+  height: 1rem;
+  left: 41rem;
+  top: 0.85rem;
+  font-family: "Satoshi-2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.7537rem;
+  line-height: 1rem;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.28);
+  align-items: center;
+  justify-content: center;
+}
+.player .list .id > p {
+  position: absolute;
+  width: 3rem;
+  height: 1.1875rem;
+  left: -0.38rem;
+  top: -0.4rem;
+  font-family: "Satoshi-3";
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8653rem;
+  line-height: 1.1875rem;
+  color: #FF4667;
+}
+.player .duty {
+  position: absolute;
+  left: 31.5rem;
+  top: 0.65rem;
+}
+.player .duty > p {
+  position: absolute;
+  width: 2.1rem;
+  height: 1.25rem;
+  left: 0.65rem;
+  top: -0.05rem;
+  text-transform: uppercase;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.5317rem;
+  line-height: 0.6875rem;
+  text-align: center;
+  background: radial-gradient(circle at center, rgb(51, 217, 255), rgba(0, 170, 255, 0.9));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.player .ping {
+  position: absolute;
+  left: 35rem;
+  top: 0.65rem;
+}
+.player .ping > p {
+  position: absolute;
+  width: 1.4rem;
+  height: 1.25rem;
+  left: 0.65rem;
+  top: -0.05rem;
+  text-transform: uppercase;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 0.5317rem;
+  line-height: 0.6875rem;
+  text-align: center;
+  background: radial-gradient(circle at center, rgb(255, 128, 0), rgb(255, 128, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.profile {
+  position: absolute;
+  left: 2.8125rem;
+  top: 17.4375rem;
+}
+.profile .background {
+  position: absolute;
+  top: 0.15rem;
+  left: 0.17rem;
+  width: 22.1rem;
+  height: 4.8581rem;
+  background-image: url("https://media.discordapp.net/attachments/627114895183446016/1139606633199190107/police_background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.profile .background .avatar {
+  position: absolute;
+  width: 4.9344rem;
+  height: 4.9344rem;
+  left: 1.5rem;
+  top: 1.6rem;
+  background-image: url("https://media.discordapp.net/attachments/627114895183446016/1139606633199190107/police_background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 2.4671rem;
+}
+.profile .name {
+  position: absolute;
+  width: 12.4375rem;
+  height: 2.125rem;
+  top: 7rem;
+  left: 1.2rem;
+  font-family: "Satoshi-2";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5871rem;
+  line-height: 2.125rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+.profile .job {
+  position: absolute;
+  top: 12rem;
+  left: 0.5rem;
+}
+.profile .job > p {
+  position: absolute;
+  width: 1.0263rem;
+  height: 0.82rem;
+  top: -1rem;
+  left: 1rem;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 0.8125rem;
+  color: #4E4E4E;
+}
+.profile .job .label {
+  position: absolute;
+  background: linear-gradient(90deg, #ff0000 0%, rgb(255, 255, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Satoshi;
+  font-size: 0.72225rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  left: 3.2rem;
+  top: 1.6rem;
+}
+.profile .bank {
+  position: absolute;
+  top: 12rem;
+  left: 11.8rem;
+}
+.profile .bank > p {
+  position: absolute;
+  width: 1.0263rem;
+  height: 0.82rem;
+  top: -1rem;
+  left: 1rem;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 0.8125rem;
+  color: #4E4E4E;
+}
+.profile .bank .label {
+  position: absolute;
+  background: linear-gradient(90deg, #55ff00 0%, rgb(0, 238, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Satoshi;
+  font-size: 0.72225rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  left: 3.4rem;
+  top: 1.5rem;
+}
+.profile .grade {
+  position: absolute;
+  top: 16.5rem;
+  left: 0.5rem;
+}
+.profile .grade > p {
+  position: absolute;
+  width: 1.0263rem;
+  height: 0.82rem;
+  top: -1rem;
+  left: 1rem;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 0.8125rem;
+  color: #4E4E4E;
+}
+.profile .grade .label {
+  position: absolute;
+  text-align: center;
+  font-family: Satoshi;
+  font-size: 0.72225rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  left: 3.4rem;
+  top: 1.6rem;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #00bbff 0%, rgb(255, 255, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.profile .cash {
+  position: absolute;
+  top: 16.55rem;
+  left: 11.8rem;
+}
+.profile .cash > p {
+  position: absolute;
+  width: 1.0263rem;
+  height: 0.82rem;
+  top: -1rem;
+  left: 1rem;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.7rem;
+  line-height: 0.8125rem;
+  color: #4E4E4E;
+}
+.profile .cash .label {
+  position: absolute;
+  text-align: center;
+  font-family: Satoshi;
+  font-size: 0.72225rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  left: 3.4rem;
+  top: 1.56rem;
+  background: linear-gradient(90deg, #55ff00 0%, rgb(255, 255, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.profile .clock {
+  position: absolute;
+  top: 7.5rem;
+  left: 11.5rem;
+}
+.profile .clock .label {
+  position: absolute;
+  background: linear-gradient(90deg, #ff00a2 0%, rgb(255, 255, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: Satoshi;
+  font-size: 0.72225rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  left: 2.35rem;
+  top: 0.75rem;
+}
+
+.update-bg {
+  position: absolute;
+  width: 22.375rem;
+  height: 19.3125rem;
+  left: 2.8125rem;
+  top: 40.4375rem;
+  box-sizing: border-box;
+  background: rgba(187, 187, 187, 0.02);
+  border: 0.0684rem solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.4106rem;
+}
+
+.up {
+  position: absolute;
+  top: 40.5rem;
+  left: 2.8rem;
+  overflow-y: hidden;
+  overflow: auto;
+  width: 27rem;
+  height: 18rem;
+  z-index: 1;
+}
+.up .list {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  margin-top: 0.7rem;
+}
+.up .list > h1 {
+  position: absolute;
+  width: 16.0625rem;
+  height: 1.1875rem;
+  left: 4.5rem;
+  top: 0.8rem;
+  font-family: "Satoshi-3";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.8876rem;
+  line-height: 1.1875rem;
+  background: linear-gradient(90deg, #FF4667 0%, rgb(255, 255, 255) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+.up .list > p {
+  position: absolute;
+  width: 15.7819rem;
+  height: 2.8125rem;
+  top: 2rem;
+  left: 4.6rem;
+  font-family: "Satoshi-2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.7101rem;
+  line-height: 0.9375rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.header {
+  position: absolute;
+  width: 25.375rem;
+  height: 4.125rem;
+  left: 58rem;
+  top: 3.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header h1 {
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.0341rem;
+  line-height: 4.125rem;
+  text-align: center;
+  letter-spacing: 0.145em;
+  background: radial-gradient(circle at center, rgba(255, 70, 103, 0.9), rgba(255, 70, 103, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 3px 10px rgba(255, 70, 103, 0.6), 0px 0px 5px rgba(255, 70, 103, 0.7);
+}
+.header p {
+  position: absolute;
+  width: 27.125rem;
+  height: 2.1875rem;
+  top: 1.7rem;
+  text-align: center;
+  font-family: "Satoshi-2";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6152rem;
+  line-height: 2.1875rem;
+  color: rgba(255, 255, 255, 0.32);
+  background: radial-gradient(circle at center, rgba(255, 70, 103, 0.74), rgba(255, 70, 103, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 5px 66.2921px #FF4667;
+}
+
+.heist {
+  position: absolute;
+  box-sizing: border-box;
+  overflow: auto;
+  height: 11rem;
+  width: 95rem;
+  top: 48.5rem;
+  left: 17.7rem;
+  z-index: 1;
+}
+.heist .center {
+  position: relative;
+  display: inline-block;
+  margin-left: 9rem;
+  margin-top: 1.2rem;
+  width: 20.375rem;
+  height: 9.063rem;
+}
+.heist .center .border {
+  position: absolute;
+  width: 26.3125rem;
+  height: 9.75rem;
+}
+.heist .center .border > p {
+  position: absolute;
+  width: 11.4375rem;
+  height: 1.6875rem;
+  left: 1.9375rem;
+  top: 6.45rem;
+  text-align: center;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.2549rem;
+  line-height: 1.6875rem;
+  color: #FFFFFF;
+}
+.heist .center .border .icon {
+  position: absolute;
+  width: 5.625rem;
+  height: 5.625rem;
+  left: 0.8125rem;
+  top: 0.9375rem;
+  border-radius: 0.5625rem;
+  background-image: url("../img/bank.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.heist .center .border .icon > h1 {
+  position: absolute;
+  width: 13.625rem;
+  height: 1.6875rem;
+  left: 6.6rem;
+  top: -0.5rem;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2549rem;
+  line-height: 1.6875rem;
+  color: #969696;
+}
+.heist .center .border .icon > p {
+  position: absolute;
+  width: 18rem;
+  height: 3.6875rem;
+  left: 6.65rem;
+  top: 1.7rem;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.6875rem;
+  line-height: 0.9375rem;
+  color: #535353;
+}
+.heist .center .clock {
+  position: absolute;
+  width: 5.5rem;
+  height: 1rem;
+  left: 21.3rem;
+  top: 7.4rem;
+  font-family: "Satoshi";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.7583rem;
+  line-height: 1rem;
+  color: #979696;
+  background: linear-gradient(90deg, #3A3A3A 0%, rgb(99, 99, 99) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (width: 3440px) and (height: 1440px) {
+  html {
+    font-size: 21.5px;
+  }
+  .live-case {
+    left: 15rem;
+  }
+  .standart-case {
+    left: 15rem;
+  }
+  .things {
+    left: 18rem;
+  }
+}
+@media screen and (width: 4096px) and (height: 2160px) {
+  html {
+    font-size: 31px;
+  }
+}
+@media screen and (width: 2560px) and (height: 1440px) {
+  html {
+    font-size: 21.5px;
+  }
+}
+@media screen and (width: 1920px) and (height: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (width: 1920px) and (height: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (width: 1920px) and (height: 1440px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (width: 1440px) and (height: 900px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (width: 1680px) and (height: 1050px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (width: 1600px) and (height: 900px) {
+  html {
+    font-size: 13.3px;
+  }
+}
+@media screen and (width: 1600px) and (height: 1024px) {
+  html {
+    font-size: 13.3px;
+  }
+}
+@media screen and (width: 1768px) and (height: 992px) {
+  html {
+    font-size: 15px;
+  }
+}
+@media screen and (width: 1366px) and (height: 768px) {
+  html {
+    font-size: 11.3px;
+  }
+}
+@media screen and (width: 1400px) and (height: 1050px) {
+  html {
+    font-size: 11.7px;
+  }
+}
+@media screen and (width: 1280px) and (height: 1024px) {
+  html {
+    font-size: 11.7px;
+  }
+}
+@media screen and (width: 1280px) and (height: 720px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media screen and (width: 1024px) and (height: 768px) {
+  html {
+    font-size: 10.05px;
+  }
+}
+@media screen and (width: 832px) and (height: 624px) {
+  html {
+    font-size: 8.05px;
+  }
+}
+@media screen and (width: 800px) and (height: 600px) {
+  html {
+    font-size: 8px;
+  }
+}/*# sourceMappingURL=app.css.map */
