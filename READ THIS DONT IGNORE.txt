@@ -1,0 +1,17 @@
+We could not find a good free dispatch the include that would work with the unique robbery scripts
+
+So we really recommend purchasing CD Dispatch (Codesign) - This one will work out of the box for our robbery scripts and is already setup!
+
+Purchase: https://codesign.pro/package/4206357
+
+There are no good free Gang Scripts apart from the one from LS V3 but that is made for 100K or die so we recommend getting one of these (not required)
+
+https://store.rcore.cz/package/4913168
+
+https://forum.cfx.re/t/core-gangs-advanced-territory-wars-bounties-ranks-npcs-leaderboards/5143046
+
+https://store.t1ger.net/package/5579989
+
+
+
+ALL COMMANDS CAN BE FOUND IN [CRM-CORE] > CRM-LOADING > CONFIG (or while you're loading in)
