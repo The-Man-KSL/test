@@ -1,0 +1,1 @@
+Please go into script,js and put your IP > Example: 14.102.233.188:30120

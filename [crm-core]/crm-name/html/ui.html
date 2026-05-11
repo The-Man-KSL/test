@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> crm </title>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+<script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+<style id="applicationStylesheet" type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  display: none;
+}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Canvas {
+		top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+		position: absolute;
+		width: 1920px;
+		height: 1080px;
+		overflow: hidden;
+	}
+	#backgrounds {
+		position: absolute;
+		width: 721px;
+		height: 732px;
+		left: 600px;
+		top: 174px;
+		overflow: visible;
+	}
+	#background_i {
+		fill: url(#background_i);
+	}
+	.background_i {
+		filter: drop-shadow(0px 3px 13px rgba(0, 0, 0, 1));
+		position: absolute;
+		overflow: visible;
+		width: 760px;
+		height: 771px;
+		left: 0px;
+		top: 0px;
+	}
+	#bglinkeleiste {
+		fill: rgba(0,153,255,1);
+	}
+	.bglinkeleiste {
+		filter: drop-shadow(0px 3px 41px rgba(0, 163, 255, 1));
+		position: absolute;
+		overflow: visible;
+		width: 844px;
+		height: 130px;
+		left: 0px;
+		top: 725px;
+	}
+	#Strich {
+		fill: rgba(255,255,255,1);
+	}
+	.Strich {
+		filter: drop-shadow(0px 3px 11px rgba(255, 255, 255, 1));
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		height: 91px;
+		left: 719px;
+		top: 220px;
+	}
+	#DeinServerName {
+		filter: drop-shadow(0px 3px 19px rgba(0, 0, 0, 1));
+		left: 740px;
+		top: 234px;
+		position: absolute;
+		overflow: visible;
+		width: 198px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 21px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.0625px;
+	}
+	#Logo {
+		filter: drop-shadow(0px 3px 9px rgba(0, 0, 0, 1));
+		position: absolute;
+		width: 62px;
+		height: 62px;
+		left: 641px;
+		top: 217px;
+		overflow: visible;
+	}
+	#close {
+		transition: 0.2s;
+		filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 1));
+		position: absolute;
+		width: 64px;
+		height: 64px;
+		left: 1240px;
+		top: 215px;
+		overflow: visible;
+	}
+	#InputAbteilung {
+		position: absolute;
+		width: 418px;
+		height: 475.267px;
+		left: 751px;
+		top: 344.028px;
+		overflow: visible;
+	}
+	#HintergrundEingabe {
+		position: absolute;
+		width: 350px;
+		height: 73.972px;
+		left: 33px;
+		top: 170px;
+		overflow: visible;
+	}
+	#Rechteck_5 {
+		fill: rgba(0,0,0,0.349);
+	}
+	.Rechteck_5 {
+		position: absolute;
+		overflow: visible;
+		width: 350px;
+		height: 71.857px;
+		left: 0px;
+		top: 0px;
+	}
+	#bglinkeleiste_r {
+		fill: rgba(19,161,255,1);
+	}
+	.bglinkeleiste_r {
+		filter: drop-shadow(0px 3px 41px rgba(0, 163, 255, 1));
+		position: absolute;
+		overflow: visible;
+		width: 473px;
+		height: 130px;
+		left: 0px;
+		top: 66.972px;
+	}
+	#HintergrundEingabe_s {
+		position: absolute;
+		width: 350px;
+		height: 73.972px;
+		left: 34px;
+		top: 261.013px;
+		overflow: visible;
+	}
+	#Rechteck_5_t {
+		fill: rgba(0,0,0,0.349);
+	}
+	.Rechteck_5_t {
+		position: absolute;
+		overflow: visible;
+		width: 350px;
+		height: 71.857px;
+		left: 0px;
+		top: 0px;
+	}
+	#bglinkeleiste_u {
+		fill: rgba(19,161,255,1);
+	}
+	.bglinkeleiste_u {
+		filter: drop-shadow(0px 3px 41px rgba(0, 163, 255, 1));
+		position: absolute;
+		overflow: visible;
+		width: 473px;
+		height: 130px;
+		left: 0px;
+		top: 66.972px;
+	}
+	#Infos {
+		position: absolute;
+		width: 418px;
+		height: 400.972px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	#NAMENS_NDERUNG {
+		filter: drop-shadow(0px 3px 12px rgba(0, 0, 0, 1));
+		left: 87px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 245px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		color: rgba(255,255,255,1);
+	}
+	#Der_Name_muss_der_Form_Vorname {
+		filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 1));
+		left: 0px;
+		top: 51px;
+		position: absolute;
+		overflow: visible;
+		width: 419px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		color: rgba(202,202,202,1);
+		letter-spacing: 0.38px;
+	}
+	#Preis_50000_ {
+		filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 1));
+		left: 112px;
+		top: 369.972px;
+		position: absolute;
+		overflow: visible;
+		width: 195px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 22px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.38px;
+	}
+	#submit {
+		transition: 0.2s;
+		position: absolute;
+		width: 211.391px;
+		height: 49.869px;
+		left: 103.305px;
+		top: 425.398px;
+		overflow: visible;
+	}
+	#btn {
+		opacity: 0.996;
+		fill: rgba(19,161,255,0.941);
+	}
+	.btn {
+		filter: drop-shadow(0px 3px 42px rgba(71, 172, 239, 0.839));
+		position: absolute;
+		overflow: visible;
+		width: 337.391px;
+		height: 175.869px;
+		left: 0px;
+		top: 0px;
+	}
+	#BESTTIGEN {
+		left: 62.695px;
+		top: 14.574px;
+		position: absolute;
+		overflow: visible;
+		width: 87px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+
+	}
+	#inputalles {
+		position: absolute;
+		overflow: visible;
+		left: 745px;
+		top: 345px;
+	}
+	#firstname {
+		outline: none;
+		background-color: transparent;
+		border: none;
+		left: 62.305px;
+		top: 193.594px;
+		position: absolute;
+		overflow: visible;
+		width: 83px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+	}
+	#lastname {
+		outline: none;
+		background-color: transparent;
+		border: none;
+		left: 63.305px;
+		top: 284.606px;
+		position: absolute;
+		overflow: visible;
+		width: 94px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+	}
+
+
+
+
+
+	#close:hover{
+		transition: 0.2s;
+		transform: scale(1.1);
+	}
+
+	#submit:hover{
+		transition: 0.2s;
+		transform: scale(1.1);
+	}
+
+
+
+</style>
+</head>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<body>
+<div id="Canvas">
+	<div id="backgrounds">
+		<svg class="background_i">
+			<linearGradient id="background_i" spreadMethod="pad" x1="0" x2="1" y1="0" y2="1">
+				<stop offset="0" stop-color="#00649d" stop-opacity="1"></stop>
+				<stop offset="0.6215" stop-color="#003858" stop-opacity="0.478"></stop>
+				<stop offset="1" stop-color="#000" stop-opacity="0.812"></stop>
+			</linearGradient>
+			<rect id="background_i" rx="5" ry="5" x="0" y="0" width="721" height="732">
+			</rect>
+		</svg>
+		<svg class="bglinkeleiste">
+			<rect id="bglinkeleiste" rx="0" ry="0" x="0" y="0" width="721" height="7">
+			</rect>
+		</svg>
+	</div>
+	<svg class="Strich">
+		<rect id="Strich" rx="1" ry="1" x="0" y="0" width="2" height="58">
+		</rect>
+	</svg>
+	<div id="DeinServerName">
+		<span>CRM Development</span>
+	</div>
+	<img id="Logo" src="Logo.png">
+		
+	<img id="close" src="close.png">
+		
+	<div id="InputAbteilung">
+		<div id="HintergrundEingabe">
+			<svg class="Rechteck_5">
+				<rect id="Rechteck_5" rx="5" ry="5" x="0" y="0" width="350" height="71.857">
+				</rect>
+			</svg>
+			<svg class="bglinkeleiste_r">
+				<rect id="bglinkeleiste_r" rx="0" ry="0" x="0" y="0" width="350" height="7">
+				</rect>
+			</svg>
+		</div>
+		<div id="HintergrundEingabe_s">
+			<svg class="Rechteck_5_t">
+				<rect id="Rechteck_5_t" rx="5" ry="5" x="0" y="0" width="350" height="71.857">
+				</rect>
+			</svg>
+			<svg class="bglinkeleiste_u">
+				<rect id="bglinkeleiste_u" rx="0" ry="0" x="0" y="0" width="350" height="7">
+				</rect>
+			</svg>
+		</div>
+		<div id="Infos">
+			<div id="NAMENS_NDERUNG">
+				<span>Change </span><span style="color:rgba(19,161,255,1);">Name</span>
+			</div>
+			<div id="Der_Name_muss_der_Form_Vorname">
+				<span>You must follow the form</span><span style="color:rgba(255,253,1,1);"> </span><span style="color:rgba(19,161,255,1);">“First Name and Last Name“</span><br/><span>Any errors will result in failure, <br/>as well as </span><span style="color:rgba(19,161,255,1);">Pay </span><span>and </span><span style="color:rgba(19,161,255,1);">Confirm </span><span>buttons.</span>
+			</div>
+			<div id="Preis_50000_">
+				<span>Pay</span><span style="color:rgba(202,202,202,1);"> </span><span style="color:rgba(255,253,1,1);"></span><span style="color:rgba(0,136,255,1);">“3.000$” </span>
+			</div>
+		</div>
+		<button id="submit" style="background-color: transparent;">
+			<svg class="btn">
+				<rect id="btn" rx="5" ry="5" x="0" y="0" width="211.391" height="49.869">
+				</rect>
+			</svg>
+			<div id="BESTTIGEN">
+				<span>CONFIRM</span>
+			</div>
+		</div>
+	    </button>
+		<div id="inputalles">
+			<input id="firstname" type="text" maxlength='10'  placeholder="FIRST..."> 
+			<input id="lastname" type="text"  maxlength='10'  placeholder="LAST..."> 
+		</div>
+	</div>
+</div>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="index.js"></script>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</body>
+</html>
