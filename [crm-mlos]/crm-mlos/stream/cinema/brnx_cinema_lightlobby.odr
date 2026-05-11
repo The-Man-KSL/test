@@ -1,0 +1,36 @@
+Version 165 32
+{
+	Shaders
+	{
+		default.sps
+		{
+			DiffuseSampler brnx_cinema_lightlobby\tl_v_office_lamps2.otx
+			HardAlphaBlend 1.00000000
+			UseTessellation 0.00000000
+		}
+		default.sps
+		{
+			DiffuseSampler brnx_cinema_lightlobby\bh1_13_sjm_chan2_bv.otx
+			HardAlphaBlend 1.00000000
+			UseTessellation 0.00000000
+		}
+	}
+	Skeleton null
+	LodGroup
+	{
+		Center 0.00000000 0.00000000 0.00000000
+		Radius 16.02860000
+		AABBMin -12.56943000 -9.83577500 -1.47741200
+		AABBMax 12.56943000 9.83577500 1.47741200
+		High 9998.00000000
+		{
+			brnx_cinema_lightlobby\brnx_cinema_lightlobby_high.mesh 0
+		}
+		Med 9998.00000000
+		Low 9998.00000000
+		Vlow 9998.00000000
+	}
+	Joints null
+	Light brnx_cinema_lightlobby\brnx_cinema_lightlobby.light
+	Bound null
+}
